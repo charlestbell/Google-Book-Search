@@ -6,3 +6,5 @@ export const get = (query) =>
   );
 
 export const saveBook = (book) => axios.post("/api/books", book);
+
+export const getBooks = () => axios.get("/api/books");

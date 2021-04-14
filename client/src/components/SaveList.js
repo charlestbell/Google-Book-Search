@@ -1,19 +1,17 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
-
-export function BookList({ children }) {
+export function SaveList({ children }) {
   return <ul className="list-group">{children}</ul>;
 }
-
-export function BookListItem({
+export function SaveListItem({
   title,
   author,
   img,
   desc,
   link,
   id,
-  handleSaveBook,
+  handleDeleteBook,
 }) {
   return (
     <div className="card mx-2 mt-2">
@@ -24,10 +22,7 @@ export function BookListItem({
         </div>
         <div className="col-8">
           <div className="d-flex flex-row-reverse mt-2 mr-2">
-            <Link to={{ pathname: link }} target="_blank">
-              <button className="mr-1">View</button>
-            </Link>
-            <button onClick={() => handleSaveBook(id)}>Save</button>
+            <button onClick={() => handleDeleteBook(id)}>Delete</button>
           </div>
         </div>
       </div>

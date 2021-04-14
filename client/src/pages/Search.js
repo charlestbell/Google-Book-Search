@@ -69,7 +69,11 @@ function Search() {
                 key={i}
                 title={book.volumeInfo.title}
                 author={book.volumeInfo.authors}
-                img={book.volumeInfo.imageLinks.thumbnail}
+                img={
+                  book.volumeInfo.imageLinks
+                    ? book.volumeInfo.imageLinks.thumbnail
+                    : null
+                }
                 desc={book.volumeInfo.description}
                 link={book.volumeInfo.infoLink}
                 id={i}
