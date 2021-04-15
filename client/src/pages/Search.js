@@ -39,7 +39,7 @@ function Search() {
       {/* <SearchBar onClick={handleSubmit} onChange={handleInputChange}/> */}
       <div className="card">
         <div className="card-body">
-          <h1 className="card-text">Book Search</h1>
+          <h2 className="card-text">Find a book to save!</h2>
           <div className="input-group m-3">
             <input
               type="text"

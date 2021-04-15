@@ -25,9 +25,14 @@ export function BookListItem({
         <div className="col-8">
           <div className="d-flex flex-row-reverse mt-2 mr-2">
             <Link to={{ pathname: link }} target="_blank">
-              <button className="mr-1">View</button>
+              <button className="mx-1 btn btn-outline-info">View</button>
             </Link>
-            <button onClick={() => handleSaveBook(id)}>Save</button>
+            <button
+              className="btn btn-outline-success"
+              onClick={() => handleSaveBook(id)}
+            >
+              Save
+            </button>
           </div>
         </div>
       </div>

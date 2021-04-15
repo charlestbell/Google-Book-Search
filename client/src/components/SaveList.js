@@ -22,7 +22,13 @@ export function SaveListItem({
         </div>
         <div className="col-8">
           <div className="d-flex flex-row-reverse mt-2 mr-2">
-            <button onClick={() => handleDeleteBook(id)}>Delete</button>
+            <button
+              type="button"
+              className="btn btn-outline-danger"
+              onClick={() => handleDeleteBook(id)}
+            >
+              Delete
+            </button>
           </div>
         </div>
       </div>
