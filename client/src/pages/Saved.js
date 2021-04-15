@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useCallback } from "react";
-import { getBooks } from "../utils/API";
+import { getBooks, deleteBook } from "../utils/API";
 
 // import SearchBar from "../components/SearchBar";
 import { SaveList, SaveListItem } from "../components/SaveList";
@@ -8,17 +8,23 @@ function Save() {
   const [myBooks, setMyBooks] = useState([]);
   console.log(myBooks);
 
-  const handleDeleteBook = () => {
+  const handleDeleteBook = (id) => {
+    deleteBook(id).then(() => {
+      runGetBooks();
+    });
     //Todo call api to delete a book, then render getbooks.
   };
 
-  // Get books to populate the page
-  useEffect(() => {
+  const runGetBooks = () =>
     getBooks()
       .then((res) => {
         setMyBooks(res.data);
       })
       .catch((err) => console.log());
+
+  // Get books to populate the page
+  useEffect(() => {
+    runGetBooks();
   }, []);
 
   return (
@@ -35,7 +41,7 @@ function Save() {
                 img={book.img ? book.img : null}
                 desc={book.desc}
                 link={book.link}
-                id={i}
+                id={book._id}
                 handleDeleteBook={handleDeleteBook}
               />
             );
